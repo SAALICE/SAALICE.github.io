@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>用想像例來說明JavaScript物件導向 | SSS愛麗sa</title><meta name="keywords" content="-學習JavaScript"><meta name="author" content="SSS愛麗sa"><meta name="copyright" content="SSS愛麗sa"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="用想像例來說明JavaScript物件導向 你記得哆拉a夢都搭乘時光機 ..咻咻得去哪嗎～它可以從某個時間點往前或往後追到另個時間點。你可以想像成眼前你所看到的每個實物個體都是由過去某樣東西從原型模具而組成你眼前的模樣。 再想像下例這張圖內的機器如果實際在眼前的模樣，從過去跟現在會是怎麼產生。 將這畫面再放到主題後，想像下列這句;『JavaScript中物件導向就像從一個（類別）物件演化成一個程式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用想像例來說明JavaScript物件導向">
+<meta property="og:url" content="http://example.com/2021/10/03/JavaScript%E6%96%87%E7%AB%A0/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91/index.html">
+<meta property="og:site_name" content="SSS愛麗sa">
+<meta property="og:description" content="用想像例來說明JavaScript物件導向 你記得哆拉a夢都搭乘時光機 ..咻咻得去哪嗎～它可以從某個時間點往前或往後追到另個時間點。你可以想像成眼前你所看到的每個實物個體都是由過去某樣東西從原型模具而組成你眼前的模樣。 再想像下例這張圖內的機器如果實際在眼前的模樣，從過去跟現在會是怎麼產生。 將這畫面再放到主題後，想像下列這句;『JavaScript中物件導向就像從一個（類別）物件演化成一個程式">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/6PJDymh.png">
+<meta property="article:published_time" content="2021-10-03T12:05:52.741Z">
+<meta property="article:modified_time" content="2021-10-03T12:06:30.055Z">
+<meta property="article:author" content="SSS愛麗sa">
+<meta property="article:tag" content="-學習JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/6PJDymh.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/10/03/JavaScript%E6%96%87%E7%AB%A0/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: SSS愛麗sa","link":"連結: ","source":"來源: SSS愛麗sa","info":"著作權歸作者所有。商業轉載請聯絡作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '用想像例來說明JavaScript物件導向',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-10-03 20:06:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://i.imgur.com/QY8YUt0.jpg)" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">71</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">標籤</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 關於我</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目錄</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 聯絡我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.imgur.com/ANfg2EE.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">SSS愛麗sa</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 關於我</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目錄</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 聯絡我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">用想像例來說明JavaScript物件導向<a class="post-edit-link" href="https://SAALICE.github.io/SAALICE/edit/master/source/_posts/JavaScript文章/物件導向.md" title="編輯" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2021-10-03T12:05:52.741Z" title="發表於 2021-10-03 20:05:52">2021-10-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2021-10-03T12:06:30.055Z" title="更新於 2021-10-03 20:06:30">2021-10-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="用想像例來說明JavaScript物件導向"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="用想像例來說明JavaScript物件導向"><a href="#用想像例來說明JavaScript物件導向" class="headerlink" title="用想像例來說明JavaScript物件導向 "></a><font color="#f00"><strong>用想像例來說明JavaScript物件導向</strong> </font></h2><p>你記得哆拉a夢都搭乘時光機 ..咻咻得去哪嗎～<br>它可以從某個時間點往前或往後追到另個時間點。<br>你可以想像成眼前你所看到的每個實物個體都是由過去某樣東西從原型模具而組成你眼前的模樣。</p>
+<p>再想像下例這張圖內的機器如果實際在眼前的模樣，從過去跟現在會是怎麼產生。<br><img src="https://i.imgur.com/MXjehcv.jpg"></p>
+<p>將這畫面再放到主題後，<br>想像下列這句;<br>『JavaScript中物件導向就像從一個（類別）物件演化成一個程式設計。』<br>有辦法想像出這個畫面嗎～<br>沒關係，我們先來一步步的解釋這句話！<br>首先;角色介紹：</p>
+<p>✏️（類別）  =&gt; 最原型的模型樣式物件 （像健身房裡常說的吃原型食物的”原型”同義），所有物件都從這開始分類建造出來。</p>
+<p>✏️ 物件  =&gt; 由（類別）繼承、分類原有的樣子及功能，再使用建構子 (Constructor) 函式建立成物件實體，將這物件實體化。<br>  —（簡單說就是從類別模板再實體化出一個新的物件。）</p>
+<p>✏️ 特殊物件  =&gt; 原理同上，只是加入別於類別模板的個人特色或新功能後，一樣透過建構子建立，並實體化成新物件。</p>
+<p>✏️ 程式設計  =&gt; 物件透過一種方法，稱之為建構子函式（constructor function）的特殊函式，定義物件與功能。並透過集合核心稱為原型鏈（Prototype chain）練成一種鏈結。</p>
+<p> ((👩🏻‍🦰 若你想深入瞭解最原型的模型樣式物件組成，或是更深層物件的過去/現在 如何鏈結組成：__proto__與protoye之間關聯） <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Details_of_the_Object_Model">可點我</a> 。 出處MDN詳細介紹。</p>
+<hr>
+<p>好的；<br>接下來，你一定開始想像以上角色是如何透過函數串在一起的？<br>我們就再往下一點，</p>
+<p>『一般來說所謂物件（類別物件/特殊物件）都是透過<strong>原型來做新增</strong>模板的實體化。而這些物件都具有：<strong>屬性 ＋ 行為</strong>。物件產生後<strong>透過建構函示</strong>來串成系列程式設計，而這方法我們都會通常會使用 obj（）或是 new 這兩種方法來做<strong>新增複數</strong>。</p>
+<p>以下我們就透過範例的過程來介紹吧！</p>
+<p>首先;這是範例中共用的<strong>模板</strong>（已經實體化後的物件）及現狀：<br>『工廠裡的馬達是由零件們串接而組成。』</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factory</span>(<span class="params"> tool , component</span>)</span>&#123;</span><br><span class="line">    machine = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    machine.tool = tool</span><br><span class="line">    machine.component = component </span><br><span class="line">    machine.action = <span class="function">() =&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">`工廠裡的<span class="subst">$&#123;tool&#125;</span>是由<span class="subst">$&#123;component&#125;</span>串接而組成`</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> machine</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g1 = factory( <span class="string">&#x27;馬達&#x27;</span>,<span class="string">&#x27;零件們&#x27;</span>)</span><br><span class="line">g1.action()  <span class="comment">//此時會印出  &#x27;工廠裡的馬達是由零件們串接而組成&#x27;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>現在要讓工廠裡的馬達以原型複製並加入一種新工具製造。</strong><br>兩種方法：</p>
+<p><font color="blue">第一種： </font><br><strong>Object.create()</strong> 指定其原型物件與屬性，創建一個新物件。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> machineTools = &#123;</span><br><span class="line"></span><br><span class="line">    <span class="attr">newtool</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;小螺絲&#x27;</span>); <span class="comment">//印出小螺絲</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factory</span>(<span class="params"> tool , component</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> machine = <span class="built_in">Object</span>.create(machineTools)</span><br><span class="line"></span><br><span class="line">    machine.tool = tool</span><br><span class="line">    machine.component = component </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> machine</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g1 = factory( <span class="string">&#x27;馬達&#x27;</span>,<span class="string">&#x27;零件&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(g1);  <span class="comment">//此時會印出 &#123; tool: &#x27;馬達&#x27;, component: &#x27;零件&#x27; &#125;</span></span><br><span class="line"><span class="comment">// g1.newtool()  //小螺絲</span></span><br></pre></td></tr></table></figure>
+
+<p>這裡需要細細品嚐的是最後兩行。從這裡的答案推回去，你會發現：<br>1.當執行第18行時，會先印出factory裡有的內容。<br>2.接下來執行第19行時，會印出新產出machineTools的內容。<br>3.由此二你可得知，<strong>machineTools是從模板factory透過原形鏈經由Object.create後出來的，但不具有原來machine功能的。可在之後你卻可以任意直接呼叫machineTools（），拿到裡面的新工具。而不影響原來的模板。</strong></p>
+<hr>
+<p><font color="blue">第二種</font> ：<br><strong>new</strong> : 創建一个用户定義的對象類型的實例或具有構建函數的內置對象的實例。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factory</span>(<span class="params"> tool , component</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">this</span>.newtool =  (<span class="string">&#x27;小螺絲&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g = <span class="keyword">new</span> factory(<span class="string">&#x27;小螺絲&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(g) <span class="comment">//印出 factory &#123; newtool: &#x27;小螺絲&#x27; &#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(g.newtool) <span class="comment">// 印出 小螺絲</span></span><br></pre></td></tr></table></figure>
+<p>這裡複製原型後新增新工具的方法比較簡單。<br>。<br>1.同樣具有上例中factory透過原形鏈並經由new方法建立新物件，並且在新物件內新增新工具內容。<br>2.但同上;不具有原來machine功能的。可在之後你卻可以任意直接呼叫machineTools（），拿到裡面的新工具。而不影響原來的模板。</p>
+<hr>
+<p>以上<br>就是對於用想像物件與方法實例來說明關於JavaScript物件導向的解說。<br>因為是以我的個人觀點進行說明（細節若有粗糙部分也請大家多多指點與包涵😊），<br>也歡迎大家可多模擬自己的想像來進行說明唷～<br>畢竟凡事總是要先知道源頭，你才會知道到底在做些什麼嘛！魔鬼藏在細節中～程式也當然不例外。</p>
+<p>最後;<br>一樣再附上今日的雞湯推薦：</p>
+<p> Do a little more of what you want to do every day, until your idea becomes what’s real. -Gwen Elliot</p>
+<p>每天多做一點你想做的事，直到你的想法變成現實。</p>
+<p><img src="https://i.imgur.com/c3Zt3B6.jpg"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:null">SSS愛麗sa</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章連結: </span><span class="post-copyright-info"><a href="http://example.com/2021/10/03/JavaScript%E6%96%87%E7%AB%A0/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91/">http://example.com/2021/10/03/JavaScript%E6%96%87%E7%AB%A0/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 許可協議。轉載請註明來自 <a href="http://example.com" target="_blank">SSS愛麗sa</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%B8%E7%BF%92JavaScript/">-學習JavaScript</a></div><div class="post_share"><div class="social-share" data-image="https://i.imgur.com/6PJDymh.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2021/10/03/JavaScript文章/this/" title="this"><img class="cover" src="https://i.imgur.com/6PJDymh.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-03</div><div class="title">this</div></div></a></div><div><a href="/2021/10/03/JavaScript文章/宣告變數/" title="宣告變數"><img class="cover" src="https://i.imgur.com/6PJDymh.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-03</div><div class="title">宣告變數</div></div></a></div><div><a href="/2021/07/07/JavaScript文章/閉包/" title="Java Script『閉包』"><img class="cover" src="https://i.imgur.com/6PJDymh.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-07</div><div class="title">Java Script『閉包』</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%83%B3%E5%83%8F%E4%BE%8B%E4%BE%86%E8%AA%AA%E6%98%8EJavaScript%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91"><span class="toc-number">1.</span> <span class="toc-text">用想像例來說明JavaScript物件導向 </span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021.7.1 - 2021 By SSS愛麗sa</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到頂部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

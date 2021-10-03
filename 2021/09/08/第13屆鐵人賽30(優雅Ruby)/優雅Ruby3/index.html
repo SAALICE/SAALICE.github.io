@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>方法的輸入處理，其實不簡單！ | SSS愛麗sa</title><meta name="keywords" content="-鐵人賽13屆：優雅RUBY"><meta name="author" content="SSS愛麗sa"><meta name="copyright" content="SSS愛麗sa"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="輸入處理，功能實現，輸出處理，異常處理。  鐵人賽第三天，今天在進入對於方法的『 輸入處理 』前： 第一個問題是， 如果方法本身沒有實現任何功能，就沒有存在必要不是嗎？ 答案：當然是正確。  你會說這問題太好笑了吧，不！這真的很重要！因為我們目標是寫出簡潔大方的資優生程式碼，故太多不必要的程式碼定義是非常佔據效能與空間的。 那故事說回來， 有哪些輸入的方法？大部分方法都會有某種形式的輸入，例如直">
+<meta property="og:type" content="article">
+<meta property="og:title" content="方法的輸入處理，其實不簡單！">
+<meta property="og:url" content="http://example.com/2021/09/08/%E7%AC%AC13%E5%B1%86%E9%90%B5%E4%BA%BA%E8%B3%BD30(%E5%84%AA%E9%9B%85Ruby)/%E5%84%AA%E9%9B%85Ruby3/index.html">
+<meta property="og:site_name" content="SSS愛麗sa">
+<meta property="og:description" content="輸入處理，功能實現，輸出處理，異常處理。  鐵人賽第三天，今天在進入對於方法的『 輸入處理 』前： 第一個問題是， 如果方法本身沒有實現任何功能，就沒有存在必要不是嗎？ 答案：當然是正確。  你會說這問題太好笑了吧，不！這真的很重要！因為我們目標是寫出簡潔大方的資優生程式碼，故太多不必要的程式碼定義是非常佔據效能與空間的。 那故事說回來， 有哪些輸入的方法？大部分方法都會有某種形式的輸入，例如直">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/uel4s6a.png">
+<meta property="article:published_time" content="2021-09-08T07:28:12.000Z">
+<meta property="article:modified_time" content="2021-10-03T09:45:13.702Z">
+<meta property="article:author" content="SSS愛麗sa">
+<meta property="article:tag" content="-鐵人賽13屆：優雅RUBY">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/uel4s6a.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/09/08/%E7%AC%AC13%E5%B1%86%E9%90%B5%E4%BA%BA%E8%B3%BD30(%E5%84%AA%E9%9B%85Ruby)/%E5%84%AA%E9%9B%85Ruby3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: SSS愛麗sa","link":"連結: ","source":"來源: SSS愛麗sa","info":"著作權歸作者所有。商業轉載請聯絡作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '方法的輸入處理，其實不簡單！',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-10-03 17:45:13'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://i.imgur.com/QY8YUt0.jpg)" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">71</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">標籤</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 關於我</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目錄</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 聯絡我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.imgur.com/ANfg2EE.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">SSS愛麗sa</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 關於我</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目錄</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 聯絡我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">方法的輸入處理，其實不簡單！<a class="post-edit-link" href="https://SAALICE.github.io/SAALICE/edit/master/source/_posts/第13屆鐵人賽30(優雅Ruby)/優雅Ruby3.md" title="編輯" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2021-09-08T07:28:12.000Z" title="發表於 2021-09-08 15:28:12">2021-09-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2021-10-03T09:45:13.702Z" title="更新於 2021-10-03 17:45:13">2021-10-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="方法的輸入處理，其實不簡單！"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>輸入處理，功能實現，輸出處理，異常處理。</p>
+</blockquote>
+<p><strong>鐵人賽第三天，</strong><img src="/images/emoticon/emoticon08.gif" alt="/images/emoticon/emoticon08.gif"><br>今天在進入對於方法的『 輸入處理 』前：</p>
+<p>第一個問題是，</p>
+<h2 id="如果方法本身沒有實現任何功能，就沒有存在必要不是嗎？"><a href="#如果方法本身沒有實現任何功能，就沒有存在必要不是嗎？" class="headerlink" title="如果方法本身沒有實現任何功能，就沒有存在必要不是嗎？ "></a><strong>如果方法本身沒有實現任何功能，就沒有存在必要不是嗎？</strong> </h2><p><strong>答案：當然是正確</strong>。 </p>
+<p>你會說這問題太好笑了吧，<br>不！這真的很重要！<br>因為我們目標是寫出簡潔大方的資優生程式碼，<br>故太多不必要的程式碼定義是非常佔據效能與空間的。</p>
+<p><strong>那故事說回來，</strong></p>
+<h2 id="有哪些輸入的方法？"><a href="#有哪些輸入的方法？" class="headerlink" title="有哪些輸入的方法？"></a>有哪些輸入的方法？</h2><p>大部分方法都會有某種形式的輸入，例如直接輸入 與 間接輸入。</p>
+<h2 id="常用的直接輸入："><a href="#常用的直接輸入：" class="headerlink" title="常用的直接輸入："></a>常用的直接輸入：</h2><p>參數輸入：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">month_in_year</span><span class="params">(num_months)</span></span></span><br><span class="line">    num_months * <span class="number">12</span> * <span class="number">30</span> </span><br><span class="line"><span class="keyword">end</span>   </span><br></pre></td></tr></table></figure>
+<p>類或模組中：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MonthlyCalendar</span></span></span><br><span class="line">    MONTH_IN_YEAR = <span class="number">12</span> * <span class="number">30</span> </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">month_in_year</span><span class="params">(num_months)</span></span></span><br><span class="line">        num_months * MONTH_IN_YEAR</span><br><span class="line">    <span class="keyword">end</span> </span><br><span class="line"><span class="keyword">end</span> </span><br></pre></td></tr></table></figure>
+<p>實體變數：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MonthlyCalendar</span></span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">initialize</span></span></span><br><span class="line">    <span class="variable">@start_date</span> = Time.now</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line">      </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">time_n_month_from_now</span><span class="params">(num_months)</span></span></span><br><span class="line">    <span class="variable">@start_date</span> + num_months * <span class="number">12</span> * <span class="number">30</span> </span><br><span class="line">  <span class="keyword">end</span> </span><br><span class="line"><span class="keyword">end</span> </span><br><span class="line"></span><br><span class="line">MonthlyCalendar.new.time_n_month_from_now(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>第3行提出了一個特別的點，<br>這裡的 Time 被當成是類別『名』輸入而非常數、類別輸入。<br>原因是在 Ruby 中，類本身也是一種物件。而類名是一個普通的常數，<br>所以經過 initialize 定義了 Time 這個常數，Time 恰好被引用成一個類而已。<br>這也是一種特別形式的輸入。</p>
+<h2 id="常用的間接輸入："><a href="#常用的間接輸入：" class="headerlink" title="常用的間接輸入："></a>常用的間接輸入：</h2><p>舉例：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Time.now <span class="comment"># 間接輸入</span></span><br></pre></td></tr></table></figure>
+<p><font color="#f00">引用 Time 類，把 now 消息發送給 Time 。實際上所需要的是 now 的回傳值，而不是 Time 常數本身，這就是一種間接輸入。</font></p>
+<h2 id="還有種方法是沒有帶任何參數的-："><a href="#還有種方法是沒有帶任何參數的-：" class="headerlink" title="還有種方法是沒有帶任何參數的 ："></a>還有種方法是沒有帶任何參數的 ：</h2><p>舉例：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">month_in_year</span></span></span><br><span class="line">    <span class="number">12</span> * <span class="number">30</span> <span class="comment"># 定義一個計算一年天數的方法</span></span><br><span class="line"><span class="keyword">end</span>   </span><br></pre></td></tr></table></figure>
+<p>也等同於以下：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MONTH_IN_YEAR = <span class="number">12</span> * <span class="number">30</span> <span class="comment"># 將方法替換成常數</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>常數就好比定義、定量。它設定好的內容通常就不太會去變更。<br>所以通常這種方法功能是有限的。</strong></p>
+<h2 id="那有特殊情況嗎？"><a href="#那有特殊情況嗎？" class="headerlink" title="那有特殊情況嗎？"></a>那有特殊情況嗎？</h2><p>其實是有的，<br>這將在下章節再深入探討變化：</p>
+<p>間接輸入只能有一層嗎？<br>間接輸入如果帶層次與程式碼的影響？<br>間接輸入後的程式碼與環境的改變？<br>（也可以未看先猜XDD ）<br>（跟著我一起翻開 『 優雅的 Ruby 』 一書，一起飛揚研究吧 ）</p>
+<p>最後，為什麼要提出輸入探討？<br>『 優雅的 Ruby 』道出關鍵，<br><font color="#f00"><br>From Roles to Object (從角色到對象)</p>
+<hr>
+</font>
+
+<p>簡單來說，就是『 對的人，放在對的事，與對的時間點，才會事半功倍 』<br>同樣的，要寫出好的程式碼（清晰度ok、健康度ok）就得先從輸入下功夫。</p>
+<p>從根本下手，為方法準備輸入時需思考：</p>
+<blockquote>
+<p>1.可用的輸入與方法之間所需要的角色如何建立關聯。<br>2.輸入處理的方法，以及本身可以容納多少類別、與如何協調。</p>
+</blockquote>
+<p>讀完這篇章，翻翻曾經寫過的 Code ，<br>仔細閱讀曾經定義方法的地方與上述思考方式做結合，<br>再重新用自己的話去描述寫出來的程式碼進行表達，<br>會發現對於寫出資優生筆記的道路上，又再度往前一腳步了！</p>
+<p>穩紮穩打才是基礎！一起加油！<br><img src="https://i.imgur.com/6NxOXXP.png"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:null">SSS愛麗sa</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章連結: </span><span class="post-copyright-info"><a href="http://example.com/2021/09/08/%E7%AC%AC13%E5%B1%86%E9%90%B5%E4%BA%BA%E8%B3%BD30(%E5%84%AA%E9%9B%85Ruby)/%E5%84%AA%E9%9B%85Ruby3/">http://example.com/2021/09/08/%E7%AC%AC13%E5%B1%86%E9%90%B5%E4%BA%BA%E8%B3%BD30(%E5%84%AA%E9%9B%85Ruby)/%E5%84%AA%E9%9B%85Ruby3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 許可協議。轉載請註明來自 <a href="http://example.com" target="_blank">SSS愛麗sa</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%90%B5%E4%BA%BA%E8%B3%BD13%E5%B1%86%EF%BC%9A%E5%84%AA%E9%9B%85RUBY/">-鐵人賽13屆：優雅RUBY</a></div><div class="post_share"><div class="social-share" data-image="https://i.imgur.com/uel4s6a.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2021/09/06/第13屆鐵人賽30(優雅Ruby)/優雅Ruby1/" title="事前準備篇"><img class="cover" src="https://i.imgur.com/uel4s6a.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-06</div><div class="title">事前準備篇</div></div></a></div><div><a href="/2021/09/07/第13屆鐵人賽30(優雅Ruby)/優雅Ruby2/" title="做人如果沒夢想，跟鹹魚有什麼區別！"><img class="cover" src="https://i.imgur.com/uel4s6a.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-07</div><div class="title">做人如果沒夢想，跟鹹魚有什麼區別！</div></div></a></div><div><a href="/2021/09/09/第13屆鐵人賽30(優雅Ruby)/優雅Ruby4/" title="『 間接方法  』"><img class="cover" src="https://i.imgur.com/uel4s6a.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-09</div><div class="title">『 間接方法  』</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E6%96%B9%E6%B3%95%E6%9C%AC%E8%BA%AB%E6%B2%92%E6%9C%89%E5%AF%A6%E7%8F%BE%E4%BB%BB%E4%BD%95%E5%8A%9F%E8%83%BD%EF%BC%8C%E5%B0%B1%E6%B2%92%E6%9C%89%E5%AD%98%E5%9C%A8%E5%BF%85%E8%A6%81%E4%B8%8D%E6%98%AF%E5%97%8E%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">如果方法本身沒有實現任何功能，就沒有存在必要不是嗎？ </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E8%BC%B8%E5%85%A5%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">有哪些輸入的方法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%9B%B4%E6%8E%A5%E8%BC%B8%E5%85%A5%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">常用的直接輸入：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E9%96%93%E6%8E%A5%E8%BC%B8%E5%85%A5%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">常用的間接輸入：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%82%84%E6%9C%89%E7%A8%AE%E6%96%B9%E6%B3%95%E6%98%AF%E6%B2%92%E6%9C%89%E5%B8%B6%E4%BB%BB%E4%BD%95%E5%8F%83%E6%95%B8%E7%9A%84-%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">還有種方法是沒有帶任何參數的 ：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%82%A3%E6%9C%89%E7%89%B9%E6%AE%8A%E6%83%85%E6%B3%81%E5%97%8E%EF%BC%9F"><span class="toc-number">6.</span> <span class="toc-text">那有特殊情況嗎？</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021.7.1 - 2021 By SSS愛麗sa</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到頂部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

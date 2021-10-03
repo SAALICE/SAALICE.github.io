@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>this | SSS愛麗sa</title><meta name="keywords" content="-學習JavaScript"><meta name="author" content="SSS愛麗sa"><meta name="copyright" content="SSS愛麗sa"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="**當我們一起出發，”this”你是誰？ **  記住這張圖！ 等等你一定用得上的！很多人説 this 就像是function中的黑魔法之一，難搞又麻煩，還喜歡變來變去，看似親民、高級卻易使人迷惑。但總在關鍵時候讓人捏把冷汗。  要想駕馭它就必須先擊破它！這裡;我想表達的是 用老招： 『反過來說。』    如果你能先掌握this的改變條件，聰明的你就一定會有很多方法能破解和提升的！今天會從多個例子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="this">
+<meta property="og:url" content="http://example.com/2021/10/03/JavaScript%E6%96%87%E7%AB%A0/this/index.html">
+<meta property="og:site_name" content="SSS愛麗sa">
+<meta property="og:description" content="**當我們一起出發，”this”你是誰？ **  記住這張圖！ 等等你一定用得上的！很多人説 this 就像是function中的黑魔法之一，難搞又麻煩，還喜歡變來變去，看似親民、高級卻易使人迷惑。但總在關鍵時候讓人捏把冷汗。  要想駕馭它就必須先擊破它！這裡;我想表達的是 用老招： 『反過來說。』    如果你能先掌握this的改變條件，聰明的你就一定會有很多方法能破解和提升的！今天會從多個例子">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/6PJDymh.png">
+<meta property="article:published_time" content="2021-10-03T12:04:49.136Z">
+<meta property="article:modified_time" content="2021-10-03T12:05:16.225Z">
+<meta property="article:author" content="SSS愛麗sa">
+<meta property="article:tag" content="-學習JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/6PJDymh.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/10/03/JavaScript%E6%96%87%E7%AB%A0/this/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: SSS愛麗sa","link":"連結: ","source":"來源: SSS愛麗sa","info":"著作權歸作者所有。商業轉載請聯絡作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'this',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-10-03 20:05:16'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://i.imgur.com/QY8YUt0.jpg)" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">71</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">標籤</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 關於我</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目錄</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 聯絡我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://i.imgur.com/ANfg2EE.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">SSS愛麗sa</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 關於我</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目錄</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 聯絡我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">this<a class="post-edit-link" href="https://SAALICE.github.io/SAALICE/edit/master/source/_posts/JavaScript文章/this.md" title="編輯" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2021-10-03T12:04:49.136Z" title="發表於 2021-10-03 20:04:49">2021-10-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2021-10-03T12:05:16.225Z" title="更新於 2021-10-03 20:05:16">2021-10-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="this"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="當我們一起出發，”this”你是誰？"><a href="#當我們一起出發，”this”你是誰？" class="headerlink" title="**當我們一起出發，”this”你是誰？ ** "></a><font color="#f00">**當我們一起出發，”this”你是誰？ ** </font></h2><p><img src="https://i.imgur.com/cmTYlDj.png"></p>
+<h2 id="記住這張圖！-等等你一定用得上的！"><a href="#記住這張圖！-等等你一定用得上的！" class="headerlink" title="記住這張圖！ 等等你一定用得上的！"></a>記住這張圖！ 等等你一定用得上的！</h2><p>很多人説 this 就像是function中的黑魔法之一，<br>難搞又麻煩，還喜歡變來變去，看似親民、高級卻易使人迷惑。<br>但總在關鍵時候讓人捏把冷汗。  要想駕馭它就必須先擊破它！<br>這裡;我想表達的是 用老招：</p>
+<p>『反過來說。』   </p>
+<p>如果你能先掌握this的改變條件，<br>聰明的你就一定會有很多方法能破解和提升的！<br>今天會從多個例子與五倍課堂上高見龍老師教授的秘技限制裡一起去分析。</p>
+<hr>
+<p>其實this有兩種：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">method -&gt; <span class="built_in">Object</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> -&gt; <span class="title">global</span> (<span class="params"><span class="built_in">window</span>, <span class="built_in">global</span></span>)</span></span><br></pre></td></tr></table></figure>
+<p>第一種偏向使用new方法產生的this物件導向。（本文站不討論）<br>第二種透過function中的this物件導向。（今日討論方向）</p>
+<p>那麼回到主題開始;<br>this在function中是什麼呢？<br>就像我問你：『你是誰』<br>this 就如同這個你一樣，它是一個存在的，值。<br>這值由被呼叫的函式來決定。它不能在執行期間被指派，每次函式呼叫調用的值也可能不同。（出自MDN定義）</p>
+<p>針對上述的第二種解釋，可以想像成<br>在瀏覽器底下    ： window<br>在node.js 底下 ： global<br>但這只是同個角色在不同背景下的不同稱呼，它們指向的this都是同一個人。</p>
+<p>記住; <font color="#f00">this是取決於誰呼叫他，而非誰在哪、呼叫他。 </font></p>
+<p>但當this出現在下列條件時，this的值就會被改變。<br>這就是： 反過來說 的條件   （by高見龍老師教學提供的秘技～真的是相當好記！又具可觀性！推～）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">有沒有使用 <span class="keyword">new</span></span><br><span class="line">誰呼叫，誰就是 <span class="built_in">this</span></span><br><span class="line">是否使用嚴格模式   </span><br><span class="line">前面沒有人，<span class="built_in">this</span> = <span class="built_in">global</span> </span><br><span class="line">是否有使用 bin、call、 apply</span><br><span class="line">使用箭頭函示，就沒有自己的 <span class="built_in">this</span> or <span class="built_in">arguments</span>  </span><br></pre></td></tr></table></figure>
+<p>其實;<br>this的故事已經說完了耶。<br>你真的不相信嗎！<br>那讓我們來解剖看看～～～</p>
+<hr>
+<p>有沒有使用 new</p>
+<hr>
+<p>還記得嗎， <font color="#f00">this是取決於誰呼叫他，而非誰在哪、呼叫他。 </font><br>透過這五個例子，你明白這句話的重要性了嗎<br>這就是他的key啊～～～<br>再來一個觀察，<br>你發現我們列出的五個條件裡，<br>都是照比較條件的發生嚴謹程度而排列下來的。<br>甚至你再好好回想，頂端的指標圖，<br>即便有好多指標指著不同方向，但柱子本身始終沒變過啊～</p>
+<p>其實;this不難，<br>但你需要認真了解，是誰問你，this又是誰。</p>
+<p>今晚的心靈雞湯來點輕鬆的吧～</p>
+<p>＂Never, never and never give up.＂    by 前英國首相邱吉爾</p>
+<p>  永不放棄！<br>  很多事情就是這樣！不用急著定義或解釋！總會到的！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:null">SSS愛麗sa</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章連結: </span><span class="post-copyright-info"><a href="http://example.com/2021/10/03/JavaScript%E6%96%87%E7%AB%A0/this/">http://example.com/2021/10/03/JavaScript%E6%96%87%E7%AB%A0/this/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 許可協議。轉載請註明來自 <a href="http://example.com" target="_blank">SSS愛麗sa</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%B8%E7%BF%92JavaScript/">-學習JavaScript</a></div><div class="post_share"><div class="social-share" data-image="https://i.imgur.com/6PJDymh.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2021/10/03/JavaScript文章/宣告變數/" title="宣告變數"><img class="cover" src="https://i.imgur.com/6PJDymh.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-03</div><div class="title">宣告變數</div></div></a></div><div><a href="/2021/10/03/JavaScript文章/物件導向/" title="用想像例來說明JavaScript物件導向"><img class="cover" src="https://i.imgur.com/6PJDymh.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-03</div><div class="title">用想像例來說明JavaScript物件導向</div></div></a></div><div><a href="/2021/07/07/JavaScript文章/閉包/" title="Java Script『閉包』"><img class="cover" src="https://i.imgur.com/6PJDymh.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-07</div><div class="title">Java Script『閉包』</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%95%B6%E6%88%91%E5%80%91%E4%B8%80%E8%B5%B7%E5%87%BA%E7%99%BC%EF%BC%8C%E2%80%9Dthis%E2%80%9D%E4%BD%A0%E6%98%AF%E8%AA%B0%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">**當我們一起出發，”this”你是誰？ ** </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A8%98%E4%BD%8F%E9%80%99%E5%BC%B5%E5%9C%96%EF%BC%81-%E7%AD%89%E7%AD%89%E4%BD%A0%E4%B8%80%E5%AE%9A%E7%94%A8%E5%BE%97%E4%B8%8A%E7%9A%84%EF%BC%81"><span class="toc-number">2.</span> <span class="toc-text">記住這張圖！ 等等你一定用得上的！</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021.7.1 - 2021 By SSS愛麗sa</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到頂部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
